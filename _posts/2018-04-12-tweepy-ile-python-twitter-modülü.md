@@ -3,7 +3,7 @@ layout: post
 title: "Tweepy ile Python Twitter Modülü"
 feature-img: 'assets/img/tweepy.png'
 date: 2018-04-12 01:14:00
-author: Batuhan Kutluca
+author: batuhankutluca
 tags: [Tweepy, Python, Twitter]
 ---
 
