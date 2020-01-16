@@ -3,7 +3,7 @@ layout: post
 title: "Powershell Serisi -2- [Enhanced Logging]"
 feature-img: 'assets/img/powershell-1/ps.jpg'
 date: 2020-01-16 00:00:00
-author: Batuhan Kutluca
+author: batuhankutluca
 tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced Logging, Logging, Module Logging, Script Block Logging, Transcription]
 ---
 

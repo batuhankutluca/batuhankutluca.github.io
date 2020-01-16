@@ -3,7 +3,7 @@ layout: post
 title: "Powershell Serisi -1- [Encoding Tipleri]"
 feature-img: 'assets/img/powershell-1/ps.jpg'
 date: 2020-01-12 19:00:00
-author: Batuhan Kutluca
+author: batuhankutluca
 tags: [Powershell, Obfuscate, Obfuscation, Unicode, ASCII, UTF8, Decode, Encode]
 ---
 
