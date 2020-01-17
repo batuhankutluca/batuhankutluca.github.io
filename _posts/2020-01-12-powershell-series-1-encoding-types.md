@@ -38,7 +38,7 @@ Devam edip dosyayı görüntülemeye kalkarsak "?" şeklinde bir içerikle karş
 ![img]({{ site.baseurl }}/assets/img/powershell-1/5.png)
 
 <p align="justify">Bu konular hakkında bilgi sahibi olmak zararlı Powershell Script analizini yaparken ve özellikle bunlar hakkında kendi toolunuzu yazarken önemli ölçüde yardımcı olacaktır. Toollarımı C# diliyle yazdım çünkü Powershell de .NET framework'ü ile hazırlanmış bir script dilidir. </p> 
-Olayların arka planda nasıl döndüğünü anlamak için böyle bir tool yazmıştım [Github Repo][gl] . İnceleyerek verinin hex formatında arka planda nasıl tutulduğunu daha rahat anlayabilirsiniz. 
+Olayların arka planda nasıl döndüğünü anlamak için böyle bir tool yazmıştım [Github Repo][gl] . İnceleyerek arka planda tutulan verinin hex karşılığını görebilirsiniz. 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-1/6.png)
 
