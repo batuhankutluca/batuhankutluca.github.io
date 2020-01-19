@@ -20,7 +20,15 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 <p align="justify">Toplamda 8 adet scriptin analizini anlatacağım ancak ilk dördünü bu yazıda paylaşacağım. Kalan dördünü aynı yazının Part2 olarak gelen devam yazısında anlatmaya çalışacağım. Yazdığım toollar scripti çalıştırmadan decoding işlemi yaptığı için tolların kullanımı sırasında herhangi bir risk oluşmayacaktır ancak scriptler Defender tarafından karantinaya alındığı için Test VM'inizde Defender'ı kapatmanızı öneririm (veya her bir dosya için cihazda izin ver seçeneğini kullanabilirsiniz).</p>
 
+## Sample 1
+
 İlk scriptimizle (Sample 1) başlayalım.
+
+<p align="justify">Dosyayı açtığımızda base64 encodelanmış bir veriyle karşılaşıyoruz. "Base64EncodeDecode.exe" toolumuzla veriyi decode diyoruz. Veriyi doğru encoding type'ı bulana kadar decode etmeye çalışıyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/1.png)
+
+
 
 
 
