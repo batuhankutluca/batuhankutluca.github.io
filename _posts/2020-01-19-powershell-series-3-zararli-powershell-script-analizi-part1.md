@@ -56,17 +56,18 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/6.png)
 
-<p align="justify">Analize base64 verimizi decode etmeye çalışarak devam ediyoruz. Toolumuzla direkt olarak decode etmeye çalışırsak hata alacağız. Çünkü içerisinde "+" karakteri kullanılmış yani iki parça kod string olarak birleştirilmiş. Bu yüzden '+' kısmını silip tekrar decode etmeye çalışıyoruz.</p>
+<p align="justify">Analize base64 verimizi decode etmeye çalışarak devam ediyoruz. Toolumuzla direkt olarak decode etmeye çalışırsak hata alacağız. Çünkü içerisinde "+" karakteri kullanılmış yani iki parça kod string olarak birleştirilmiş. Bu yüzden '+' kısmını silmemiz gerekiyor.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/7.png)
 
-<p align="justify">Analize base64 verimizi decode etmeye çalışarak devam ediyoruz. Toolumuzla direkt olarak decode etmeye çalışırsak hata alacağız. Çünkü içerisinde "+" karakteri kullanılmış yani iki parça kod string olarak birleştirilmiş. Bu yüzden '+' kısmını silip tekrar decode etmeye çalışıyoruz. Doğru encoding type'ı bulana kadar decode etmeye çalışıyoruz ve "Unicode" olarak başarılı bir şekilde decode edebiliyoruz.</p>
+<p align="justify">Veriyi düzgün hale getirdikten sonra doğru encoding type'ı bulana kadar decode etmeye çalışıyoruz ve "Unicode" olarak başarılı bir şekilde decode edebiliyoruz.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/8.png)
 
-<p align="justify">Decode edilmiş veriye göz attığımızda bir hex stream gözümüze çarpıyor. Daha da önemlisi "fc, e8, 82" magic bytelarına sahip olmasından dolayı bunun bir meterpreter shellcode olduğunu anlıyoruz. Eğer msfvenom ile herhangi bir payload oluşturup hex editor yardımıyla incelerseniz payloadın "fc, e8, 82" magic bytelarına sahip olduğunu göreceksiniz. Bunun dışında default olarak oluşturulan payloadın bir seviye daha obfuscate edildiğini görüyoruz. Daha sonra analizimize bu shellcode aracılığıyla bağlantı kurulmaya çalışılan C2 IP/Domain ve port bilgisini elde etmeye çalışıyoruz. Text editor aracılığıyla :, karakterlerini silip hex editorümüze kopyalıyoruz.</p>
+<p align="justify">Decode edilmiş veriye göz attığımızda bir hex stream gözümüze çarpıyor. Daha da önemlisi "fc, e8, 82" magic bytelarına sahip olmasından dolayı bunun bir meterpreter shellcode olduğunu anlıyoruz. Eğer msfvenom ile herhangi bir payload oluşturup hex editor yardımıyla incelerseniz payloadın "fc, e8, 82" magic bytelarına sahip olduğunu göreceksiniz. Daha sonra analizimize bu shellcode aracılığıyla bağlantı kurulmaya çalışılan C2 IP/Domain ve port bilgisini elde etmeye çalışıyoruz. Text editor aracılığıyla :, karakterlerini silip hex editorümüze kopyalıyoruz.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/9.png)
+
 
 
 
