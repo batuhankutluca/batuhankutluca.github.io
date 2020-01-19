@@ -28,6 +28,10 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/1.png)
 
+<p align="justify">Başarılı bir şekilde decode ettikten sonra script bloğunun "hxxps://5.top4top.net/p_1372hc5jv1.jpg" dosyasının içeriğini okuyup "defender" adlı fonksiyonu çağırdığını görüyoruz. "p_1372hc5jv1.jpg" bir resim olarak gözükse de dosyasının içeriğini herhangi bir text editor aracılığıyla okuduğumuzda "defender" adlı fonksiyonla ve "$payload" değişkenine atanmış bir dizi decimal veriyle karşılaşıyoruz. Ayrıca "Reflection.Assembly" fonksiyonundan payloadın memory üzerinde çalışacağını anlıyoruz. Bu yöntem genel olarak "fileless malware" türündeki zararlılarda görülmektedir. .NET direk olarak memory üzerinde binary çalıştırmaya yarayan methodlara sahiptir ve bu özellik sayesinde diske herhangi bir dosya yazmadan memory üzerinde bir alan allocate edip bu alan üzerinde binary çalıştırılabilir. Powershell de .NET tabanlı olduğu için bu tarz özellikler zararlı amaçlarla da kullanılabilmektedir. Çoğu zaman AV/EDR bypass için bu yöntem kullanılmaktadır.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/2.png)
+
 
 
 
