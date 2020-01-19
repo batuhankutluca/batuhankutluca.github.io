@@ -48,6 +48,13 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ## Sample 2
 
+<p align="justify">Dosyayı açtığımızda bir dizi parametre ve base64 encodelanmış veriyle karşılaşıyoruz. Parametreler kullanıldığı için büyük ihtimalle cmd aracılığıyla çalıştırılan bir kod bloğu olduğunu anlıyoruz. "-w" parametresi ve "1" argümanı powershellimizi "-WindowStyle" seçeneklerinden 1.si yani "Hidden" seçeneğiyle çalıştıracaktır. Bu da powershellin arka planda yani ekrana bir çıktı vermeden çalıştırılacağı anlamına gelmektedir. "/C" parametresi ise "-command" yani devamında gelen çift tırnak içine yazılmış argümanı çalıştır demek oluyor. Çalıştırılacak kodumuza baktığımızda 2 adet alias kullanıldığını fark ediyoruz.</p> 
+
+"sv" aliasını [araştırdığımızda][alias_resource] "Set-Variable", "gv" aliasını araştırdığımızda ise "Get-Variable" fonksiyonlarına karşılık geldiğini görüyoruz.
+
+
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/6.png)
 
 
 
@@ -64,5 +71,6 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 [rapid]: https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
 [anyrun1]: https://app.any.run/tasks/48b5012b-4987-4925-ac00-9677c100615a/
 [vt1]: https://www.virustotal.com/gui/file/626879e64f571e21902bdc2f249ce247e03420e8656990d54f3ab4ceb99b4fb4/detection
+[alias_resource]: https://ilovepowershell.com/2011/11/03/list-of-top-powershell-alias/
 
 
