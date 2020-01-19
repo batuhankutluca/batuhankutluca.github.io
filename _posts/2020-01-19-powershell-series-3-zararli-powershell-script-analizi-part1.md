@@ -68,6 +68,18 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/9.png)
 
+<p align="justify">Decoded text bölümünde en altta "192.168.43.179" IP'sini görmekteyiz. Ayrıca /1IUpVtAgm... ile başlayan cleartext kısım bir dizini ifade etmektedir. Yani connection 192.168.43.179/1IUpVtAgm... web sunucu dizinine sağlanmaya çalışılmaktadır. Bu IP extraction her zaman bu şekilde cleartext olarak karşımıza çıkmamaktadır. Genelde bir dizine connection atıldığında bu IP-Domain/Path bilgisini cleartext olarak görebiliyoruz. Bu tip durumlarda path üzerinden tarayıcı zafiyetini sömürmeye yarayan zararlı kod yerleştirilmiş web sayfaları servis ediliyor olabilir.</p>
+
+<p align="justify">Ek olarak hex editor aracılığıyla shellcode'umuzu dosya olarak kaydedip disassembler yardımıyla stringleri çıkartabiliriz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/10.png)
+
+<p align="justify">Buradan yine path bilgisini görebiliyoruz.</p>
+
+!! 77696E6954684C7726 wininetx86!!
+
+
+
 
 
 
