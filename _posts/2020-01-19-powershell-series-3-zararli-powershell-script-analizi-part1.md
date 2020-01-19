@@ -32,6 +32,23 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/2.png)
 
+<p align="justify">$payload değişkeni içindeki decimal verinin çalıştırılması amaçlandığından bu veriyi hex formatına dönüştürüp analizimize devam etmemiz gerekiyor. </p>
+
+[Bu linkten][rapid] decimal verimizi hex formatına dönüştürüyoruz.
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/3.png)
+
+Magic Byte'ları kontrol ettiğimizde "4D 5A" ile başladığını (MZ Header) görüyoruz ve bunun bir .exe uzantılı dosya olduğunu anlıyoruz. Exe analizi konusunda çok derin bilgim olmadığı için dosyayı [any.run][anyrun1] üzerinden analize verdim.
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/4.png)
+
+Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı ancak dosya sha'sını [VirusTotal][vt1] üzerinde arattığımızda IOC'lerden dosyanın SamSam ransomware'ına ait bir sample olduğunu anlıyoruz.
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/5.png)
+
+## Sample 2
+
+
 
 
 
@@ -44,4 +61,8 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 [ida_dl]: https://www.hex-rays.com/products/ida/support/download.shtml
 [scripts_dl]: https://www.google.com
 [scumbots_twitter]: https://twitter.com/ScumBots
+[rapid]: https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
+[anyrun1]: https://app.any.run/tasks/48b5012b-4987-4925-ac00-9677c100615a/
+[vt1]: https://www.virustotal.com/gui/file/626879e64f571e21902bdc2f249ce247e03420e8656990d54f3ab4ceb99b4fb4/detection
+
 
