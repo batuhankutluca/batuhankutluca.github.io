@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "assets/img/pexels/circuit.jpeg"
+feature-img: "assets/img/pexels/wallhaven-mdo9zk.jpg"
 tags: [About, Archive]
 ---
 
