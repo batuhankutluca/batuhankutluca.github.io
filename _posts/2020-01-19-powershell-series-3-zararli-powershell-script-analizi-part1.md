@@ -108,7 +108,13 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/17.png)
 
-<p align="justify">Görüldüğü üzere shellcode kısmımız önce base64 decode edilip daha sonra "35" keyi ile xorlanıp execute ediliyor. Biz de aynı sırayla işlemlerimizi gerçekleştirip C2 bilgisine ulaşmaya çalışacağız. Artık decode edeceğimiz kısım shellcode olduğu için "hex stream" kutucuğunu işaretlemek zorundayız.</p>
+<p align="justify">Çıktımızı alıp 35 keyi ile xorluyoruz. Bu sırada input ve output olarak hex seçeneğini işaretlemek zorundayız çünkü elimizdeki veri bir hex streamdir.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/18.png)
+
+<p align="justify">Sonunda shellcodeumuza ulaşabildik. Önceki örnekte olduğu gibi hex streamimi alıp bir hex editor aracılığıyla okuyorum.</p>
+
+
 
 
 
