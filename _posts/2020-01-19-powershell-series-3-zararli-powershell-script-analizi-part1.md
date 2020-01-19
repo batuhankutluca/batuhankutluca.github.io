@@ -92,8 +92,23 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/13.png)
 
+<p align="justify">Başarılı bir şekilde char arrayimizi text haline dönüştürebildik. Ancak karşımıza mantıklı bir şey çıkmadı çünkü xor işlemimizi daha gerçekleştirmedik. "XOR.exe" toolumuzu açıp bir önceki çıktımızı input olarak giriyoruz. Input type olarak "String Input", XOR Key Type olarak "Hex Key", XOR Key olarak "1D" ve Output type olarak "String Output" seçiyoruz. Örneğin bu sampleda xor keyimiz 1D olduğu için hex key seçeneğini seçtik veya inputumuz string olduğu için string input seçeneğini seçtik ancak farklı samplelarda inputumuz hex olabilir veya xor keyimiz decimal formatinda olabilir. XOR butonuna basıp çıktımızı inceliyoruz.</p>
 
+![img]({{ site.baseurl }}/assets/img/powershell-3/14.png)
 
+<p align="justify">XOR işlemi sonucunda powershell syntax'ına uygun bir veri elde edebildik. Ancak hala shellcode'umuza ulaşamadık. Çıktımızı incelediğimizde base64 stringimizin GZip ile compress edildiğini görüyoruz. GZip normalde bir data streaminin boyutunun küçültmek için kullanılıyor ancak burada karşımıza sadece analiz işlemini bir adım zorlaştırmak amacıyla karşımıza çıkıyor. "GZipCompress.exe" toolumuzu açıp base64 kısmı input olarak giriyoruz ve decompress işlemi gerçekleştiriyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/15.png)
+
+<p align="justify">Bir adım daha gittikten sonra tekrar bir dizi powershell komutuyla karşılaşıyoruz. Çoğu scripti incelerken karşımıza çıkacak olan bir yapıya sahip. Zaten automated pentest toolları (Cobaltstrike, PowershellEmpire) bu gibi payloadları oluştururken çoğu zaman aynı formatta oluşturuyor ve gözümüz bir süre sonra aşina oluyor. Kısaca bahsedecek olursak memoryde shellcode çalıştırmaya yarıyor ama bizim için önemli olan kısım C2 bilgisini elde etmek olduğu için base64 kısmını kopyalıyorum ve text editore yapıştırıyorum. </p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/16.png)
+
+<p align="justify">Görüldüğü üzere shellcode kısmımız önce base64 decode edilip daha sonra "35" keyi ile xorlanıp execute ediliyor. Biz de aynı sırayla işlemlerimizi gerçekleştirip C2 bilgisine ulaşmaya çalışacağız. Artık decode edeceğimiz kısım shellcode olduğu için "hex stream" kutucuğunu işaretlemek zorundayız.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/17.png)
+
+<p align="justify">Görüldüğü üzere shellcode kısmımız önce base64 decode edilip daha sonra "35" keyi ile xorlanıp execute ediliyor. Biz de aynı sırayla işlemlerimizi gerçekleştirip C2 bilgisine ulaşmaya çalışacağız. Artık decode edeceğimiz kısım shellcode olduğu için "hex stream" kutucuğunu işaretlemek zorundayız.</p>
 
 
 
