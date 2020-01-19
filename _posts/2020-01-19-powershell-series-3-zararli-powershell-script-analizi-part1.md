@@ -52,9 +52,22 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 "sv" aliasını [araştırdığımızda][alias_resource] "Set-Variable", "gv" aliasını araştırdığımızda ise "Get-Variable" fonksiyonlarına karşılık geldiğini görüyoruz.
 
-
+<p align="justify">Önce "sv" aliası ile "ww" değişkenine "-" değeri atanmış. Yine aynı yöntemle "qC" değişkenine "ec" değeri atanmış. Daha sonra "Lf" değişkeni oluşturulup "gv" aliası ile önce "ww" değişkeninin değeri, sonra "qC" değişkeninin değeri string şeklinde birleştirilip "Lf" değişkenine atanmış. Sonuca bakacak olursak "-ec" değeri "Lf" değişkenine atanmış oluyor. "-ec" parametresi "-EncodedCommand" parametresine karşılık gelmektedir. Yani bir encodelanmış veri çalıştırılacağını anlıyoruz. Burada bir obfuscation işlemi yapılmış. </p> 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/6.png)
+
+<p align="justify">Analize base64 verimizi decode etmeye çalışarak devam ediyoruz. Toolumuzla direkt olarak decode etmeye çalışırsak hata alacağız. Çünkü içerisinde "+" karakteri kullanılmış yani iki parça kod string olarak birleştirilmiş. Bu yüzden '+' kısmını silip tekrar decode etmeye çalışıyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/7.png)
+
+<p align="justify">Analize base64 verimizi decode etmeye çalışarak devam ediyoruz. Toolumuzla direkt olarak decode etmeye çalışırsak hata alacağız. Çünkü içerisinde "+" karakteri kullanılmış yani iki parça kod string olarak birleştirilmiş. Bu yüzden '+' kısmını silip tekrar decode etmeye çalışıyoruz. Doğru encoding type'ı bulana kadar decode etmeye çalışıyoruz ve "Unicode" olarak başarılı bir şekilde decode edebiliyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/8.png)
+
+<p align="justify">Decode edilmiş veriye göz attığımızda bir hex stream gözümüze çarpıyor. Daha da önemlisi "fc, e8, 82" magic bytelarına sahip olmasından dolayı bunun bir meterpreter shellcode olduğunu anlıyoruz. Eğer msfvenom ile herhangi bir payload oluşturup hex editor yardımıyla incelerseniz payloadın "fc, e8, 82" magic bytelarına sahip olduğunu göreceksiniz. Bunun dışında default olarak oluşturulan payloadın bir seviye daha obfuscate edildiğini görüyoruz. Daha sonra analizimize bu shellcode aracılığıyla bağlantı kurulmaya çalışılan C2 IP/Domain ve port bilgisini elde etmeye çalışıyoruz. Text editor aracılığıyla :, karakterlerini silip hex editorümüze kopyalıyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/9.png)
+
 
 
 
