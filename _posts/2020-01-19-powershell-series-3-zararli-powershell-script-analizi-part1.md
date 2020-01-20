@@ -145,6 +145,16 @@ Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz
 
 <p align="justify">Decompress işleminden sonra yine tipik bir yapıya sahip meterpreter shellcodeuyla karşılaşıyoruz. </p>
 
+![img]({{ site.baseurl }}/assets/img/powershell-3/26.png)
+
+<p align="justify">Base64 kısmı alıp decoding işlemi uyguluyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/27.png)
+
+<p align="justify">Başarılı bir şekilde shellcodeumuzun hex ifadesini elde ettik. Hex editöre yapıştırıp incelemeye devam ediyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/28.png)
+
 
 
 [mytoolbag_dl]: https://github.com/batuhankutluca/Powershell-Decoding-Helper-Tools
