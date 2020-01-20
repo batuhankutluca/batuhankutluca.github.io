@@ -155,6 +155,21 @@ Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/28.png)
 
+<p align="justify">Bu sefer bağlantı sağlanılan sunucu bilgisini elde edemedik. Bu yüzden analizimize disassembler ile devam etmek zorundayız. Dosyayı kaydedip IDA ile açıyoruz ve burada push edilen değerlere bakarak IP ve port bilgisi elde etmeye çalışıyoruz. Metasploitin reverse_tcp assemblysini incelediğimizde bizim shellcodeumuza benzediğini görüyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/29.png)
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/30.png)
+
+<p align="justify">Verilen parametrelere göre assembly değişiklik gösterse de referans olarak aldığımız zaman set_address kısmında ilk olarak IP, ikinci olarak port bilgisinin push edildiğini görüyoruz. Ayrıca shell tipine göre hex code kısmında belirli bir offset patterni çıkarabiliriz ancak bu şekilde incelemek bana daha sağlıklı geliyor. Disassemblerımıza baktığımızda 2 adet push komutunun çalıştığını görüyoruz. Assemblyde bitler ters olarak incelenmesi gerektiğinden herhangi bir hex to text converterı sayesinde IP ve port bilgimizi elde etmeye çalışıyoruz. </p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/31.png)
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/32.png)
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/33.png)
+
+<p align="justify">Yazdığım her şey çeşitli kaynaklardan edindiğim bilgilerin ve araştırmalarımın sonuçlarının kendimce yorumlanmış halidir. Yanlış veya eksik bir bilgi söz konusuysa lütfen sayfanın en aşağısında bulunan sosyal medya linklerim üzerinden beni bilgilendirin. Bir sonraki yazıda görüşmek üzere. </p>
 
 
 [mytoolbag_dl]: https://github.com/batuhankutluca/Powershell-Decoding-Helper-Tools
