@@ -74,9 +74,11 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/10.png)
 
-<p align="justify">Buradan yine path bilgisini görebiliyoruz. Hangi </p>
+<p align="justify">Buradan yine path bilgisini görebiliyoruz.</p>
 
-!! 77696E6954684C7726 wininetx86!!
+Daha detaya inecek olursak kullanılan winapileri tespit edebiliriz. Bu winapiler shellcode içine byte şeklinde gömüldüğünden apilerin hashlerini bilmek tespit açısından yeterli olacaktır. [Link üzerinden][metasp] inceleme yaptığımızda kullanılan wininet apisinin hash bilgisini görüyoruz. Hex gösterimi "0x0074656e" şeklinde olan byteların stacke push edildiği bilgisini edindikten sonra shellcodeumuza dönüp hex kısmında arama yapıyoruz. Burada dikkat edilecek kısım Big-Endian, Little-Endian farklılığından kaynaklanan byteların sırasının farklılığıdır. Yani biz bu hexleri sondan başa 2şer ayırarak aratmamız gerekiyor. 
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/11.png)
 
 ## Sample 3
 
@@ -116,6 +118,8 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/19.png)
 
+<p align="justify">Yine cleartext şeklinde domain bilgisine ulaştık. Ek olarak bağlantı kurulurken kullanılan User-Agent bilgisini elde ettik.</p>
+
 
 
 
@@ -130,5 +134,5 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 [anyrun1]: https://app.any.run/tasks/48b5012b-4987-4925-ac00-9677c100615a/
 [vt1]: https://www.virustotal.com/gui/file/626879e64f571e21902bdc2f249ce247e03420e8656990d54f3ab4ceb99b4fb4/detection
 [alias_resource]: https://ilovepowershell.com/2011/11/03/list-of-top-powershell-alias/
-
+[metasp]: https://github.com/rapid7/metasploit-framework/blob/master/external/source/shellcode/windows/x86/src/block/block_reverse_http.asm
 
