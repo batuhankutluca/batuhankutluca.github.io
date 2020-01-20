@@ -68,13 +68,13 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/9.png)
 
-<p align="justify">Decoded text bölümünde en altta "192.168.43.179" IP'sini görmekteyiz. Ayrıca /1IUpVtAgm... ile başlayan cleartext kısım bir dizini ifade etmektedir. Yani connection 192.168.43.179/1IUpVtAgm... web sunucu dizinine sağlanmaya çalışılmaktadır. Bu IP extraction her zaman bu şekilde cleartext olarak karşımıza çıkmamaktadır. Genelde bir dizine connection atıldığında bu IP-Domain/Path bilgisini cleartext olarak görebiliyoruz. Bu tip durumlarda path üzerinden tarayıcı zafiyetini sömürmeye yarayan zararlı kod yerleştirilmiş web sayfaları servis ediliyor olabilir.</p>
+<p align="justify">Decoded text bölümünde en altta "192.168.43.179" IP'sini görmekteyiz. Ayrıca /1IUpVtAgm... ile başlayan cleartext kısım bir dizini ifade etmektedir. Yani connection 192.168.43.179/1IUpVtAgm... web sunucu dizinine sağlanmaya çalışılmaktadır. Bu IP extraction her zaman bu şekilde cleartext olarak karşımıza çıkmamaktadır. Genelde bir dizine connection atıldığında bu IP-Domain/Path bilgisini cleartext olarak görebiliyoruz. Bu tip durumlarda path üzerinden farklı bir urle yönlendirme yapılabilir. Bu yüzden atak senaryosunun bir adım daha olabileceğini göz önünde bulundurmak doğru olabilir.</p>
 
 <p align="justify">Ek olarak hex editor aracılığıyla shellcode'umuzu dosya olarak kaydedip disassembler yardımıyla stringleri çıkartabiliriz.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/10.png)
 
-<p align="justify">Buradan yine path bilgisini görebiliyoruz.</p>
+<p align="justify">Buradan yine path bilgisini görebiliyoruz. Hangi </p>
 
 !! 77696E6954684C7726 wininetx86!!
 
@@ -84,7 +84,7 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/11.png)
 
-<p align="justify">Dosyayı açtığımızda bir char array ve en sonda xor işlemi için bir key görüyoruz. En başta ise "((vaRIABLe '*MDr*').naME[3,11,2]-JOIn'')" ifadesi yer alıyor. Bu ifadenin ne anlama geldiğini anlamak için powershell açıp komutu çalıştırıyoruz. Karşımıza "iex" komutu yani InvokeExpression fonksiyonu çıkıyor. Bu fonksiyon kendinden sonra gelen bir dizi komutu çalıştırmaya yarıyor. Daha detaylı görmek için "variable *mdr*" komutunu çalıştırıyorum. "variable" komutunu bir üstteki gv aliası gibi düşünebiliriz yani bir değişkenin değerini almak için kullanılıyor. Sırasıyla arrayin 3,11 ve 2. elemanlarını aldığımızda i-e-x değerleriyle karşılaşıyoruz ve join komutuyla birleştirildiğinde InvokeExpression ifadesi karşımıza gelmiş oluyor. Bu kalıp çoğu obfuscate edilmiş scriptlerde karşımıza çıkmaktadır.</p>
+<p align="justify">Karşımıza "iex" komutu yani InvokeExpression fonksiyonu çıkıyor. Bu fonksiyon kendinden sonra gelen bir dizi komutu çalıştırmaya yarıyor. Daha detaylı görmek için "variable *mdr*" komutunu çalıştırıyorum. "variable" komutunu bir üstteki gv aliası gibi düşünebiliriz yani bir değişkenin değerini almak için kullanılıyor. Sırasıyla arrayin 3,11 ve 2. elemanlarını aldığımızda i-e-x değerleriyle karşılaşıyoruz ve join komutuyla birleştirildiğinde InvokeExpression ifadesi karşımıza gelmiş oluyor. Bu kalıp çoğu obfuscate edilmiş scriptlerde karşımıza çıkmaktadır.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/12.png)
 
@@ -114,7 +114,7 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 <p align="justify">Sonunda shellcodeumuza ulaşabildik. Önceki örnekte olduğu gibi hex streamimi alıp bir hex editor aracılığıyla okuyorum.</p>
 
-
+![img]({{ site.baseurl }}/assets/img/powershell-3/19.png)
 
 
 
