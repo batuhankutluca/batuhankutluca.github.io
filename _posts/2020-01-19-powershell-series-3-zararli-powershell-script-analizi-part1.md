@@ -133,6 +133,14 @@ Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz
 
 <p align="justify">Yine cleartext şeklinde domain bilgisine ulaştık. Ek olarak bağlantı kurulurken kullanılan User-Agent bilgisini elde ettik.</p>
 
+## Sample 4
+
+<p align="justify">Dosyayı açtığımızda bir dizi komut ve base64 verimizle karşılaşıyoruz. %COMPSEC% ifadesi cmd'yi işaret etmektedir. /b parametresi pencere oluşturmadan çalıştırmaya, /c parametresi de kendinden sonra gelen komutları çalıştırmaya yarıyor. Hidden yani ekranda pencere oluşturmadan bir powershell çağırılıyor ve base64 verimiz decode edilip çalıştırılıyor. Verimizi decode edip çıktıya bakıyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/24.png)
+
+<p align="justify"></p>
+
 
 
 
