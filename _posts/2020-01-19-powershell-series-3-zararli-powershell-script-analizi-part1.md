@@ -88,7 +88,7 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/12.png)
 
-<p align="justify">Burayı anladıktan sonra kalan işlem char arrayi önce string haline getirip daha sonra xorlamaktır. Son olarak bir dizi powershell komutuyla karşılaşacağız ve bu komutların çalışması için hepsinin başına IEX yani InvokeExpression fonksiyonuna ihtiyacımız var. Dosyamızın en sonuna baktığımızda xor işlemi için belirtilen key "1D" olarak gözüküyor. "CharCodeConverter.exe" toolumuzu açıp charcode bölümünü input olarak giriyoruz. Textbox'a girilecek değer delimeter olması gerekiyor ki bu kod bloğunda char codelar "," ile ayrılmıştır. Boşlukları silmemize gerek yok, tool arka planda bütün boşlukları kendi siliyor.</p>
+<p align="justify">Burayı anladıktan sonra kalan işlem char arrayi önce string haline getirip daha sonra xorlamaktır. Dosyamızın en sonuna baktığımızda xor işlemi için belirtilen key "1D" olarak gözüküyor. "CharCodeConverter.exe" toolumuzu açıp charcode bölümünü input olarak giriyoruz. Textbox'a girilecek değer delimeter olması gerekiyor ki bu kod bloğunda char codelar "," ile ayrılmıştır. Boşlukları silmemize gerek yok, tool arka planda bütün boşlukları kendi siliyor.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/13.png)
 
