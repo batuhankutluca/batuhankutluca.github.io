@@ -76,47 +76,58 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 <p align="justify">Buradan yine path bilgisini görebiliyoruz.</p>
 
-Daha detaya inecek olursak kullanılan winapileri tespit edebiliriz. Bu winapiler shellcode içine byte şeklinde gömüldüğünden apilerin hashlerini bilmek tespit açısından yeterli olacaktır. Örnet olarak wininet apisinin kullanıldığını bildiğim için [Link üzerinden][metasp] wininet apisinin hash bilgisini kontrol edebiliriz. Hex gösterimi "0x0074656e" şeklinde olan byteların stacke push edildiği bilgisini edindikten sonra shellcodeumuza dönüp hex kısmında arama yapıyoruz. Burada dikkat edilecek kısım Big-Endian, Little-Endian farklılığından kaynaklanan byteların sırasının farklılığıdır. Yani biz bu hexleri sondan başa 2şer ayırarak aratmamız gerekiyor. 
+Daha detaya inecek olursak kullanılan winapileri tespit edebiliriz. Bu winapiler shellcode içine byte şeklinde gömüldüğünden apilerin hashlerini bilmek tespit açısından yeterli olacaktır. Örnet olarak wininet apisinin kullanıldığını bildiğim için [Link üzerinden][metasp] apinin hash bilgisini kontrol edebiliriz. Hex gösterimi "0x0074656e" şeklinde olan byteların stacke push edildiği bilgisini edindikten sonra shellcodeumuza dönüp hex kısmında arama yapıyoruz. Burada dikkat edilecek kısım Big-Endian, Little-Endian farklılığından kaynaklanan byteların sırasının farklılığıdır. Yani biz bu hexleri sondan başa 2şer ayırarak aratmamız gerekiyor. 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/11.png)
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/12.png)
+
+Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz. Shellcodeun hangi apileri çağırdığını bilmek aynı zamanda o apinin hangi fonksiyonlarının çağırıldığı hakkında da bilgi içermektedir. [MSDN][msdn] üzerinden apinin hangi fonksiyonları içerdiği ve fonksiyonların ne işe yaradığına bakıp shellcodeun çalışma amacı hakkında vizyon sahibi olabiliriz. 
+
+<p align="justify">Yine örnek olması açısından "InternetReadFile" fonksiyonunun kullanılıp kullanılmadığına bakalım. Metasploit github linkinden fonskiyonun hashini shellcodeumuzda arattığımızda ilgili hexlerle karşılaşıyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/13.png)
+
+![img]({{ site.baseurl }}/assets/img/powershell-3/14.png)
+
 
 ## Sample 3
 
 <p align="justify">Dosyayı açtığımızda bir char array ve en sonda xor işlemi için bir key görüyoruz. En başta ise "((vaRIABLe '*MDr*').naME[3,11,2]-JOIn'')" ifadesi yer alıyor. Bu ifadenin ne anlama geldiğini anlamak için powershell açıp komutu çalıştırıyoruz.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/12.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/15.png)
 
 <p align="justify">Karşımıza "iex" komutu yani InvokeExpression fonksiyonu çıkıyor. Bu fonksiyon kendinden sonra gelen bir dizi komutu çalıştırmaya yarıyor. Daha detaylı görmek için "variable *mdr*" komutunu çalıştırıyorum. "variable" komutunu bir üstteki gv aliası gibi düşünebiliriz yani bir değişkenin değerini almak için kullanılıyor. Sırasıyla arrayin 3,11 ve 2. elemanlarını aldığımızda i-e-x değerleriyle karşılaşıyoruz ve join komutuyla birleştirildiğinde InvokeExpression ifadesi karşımıza gelmiş oluyor. Bu kalıp çoğu obfuscate edilmiş scriptlerde karşımıza çıkmaktadır.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/13.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/16.png)
 
 <p align="justify">Burayı anladıktan sonra kalan işlem char arrayi önce string haline getirip daha sonra xorlamaktır. Dosyamızın en sonuna baktığımızda xor işlemi için belirtilen key "1D" olarak gözüküyor. "CharCodeConverter.exe" toolumuzu açıp charcode bölümünü input olarak giriyoruz. Textbox'a girilecek değer delimeter olması gerekiyor ki bu kod bloğunda char codelar "," ile ayrılmıştır. Boşlukları silmemize gerek yok, tool arka planda bütün boşlukları kendi siliyor.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/14.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/17.png)
 
 <p align="justify">Başarılı bir şekilde char arrayimizi text haline dönüştürebildik. Ancak karşımıza mantıklı bir şey çıkmadı çünkü xor işlemimizi daha gerçekleştirmedik. "XOR.exe" toolumuzu açıp bir önceki çıktımızı input olarak giriyoruz. Input type olarak "String Input", XOR Key Type olarak "Hex Key", XOR Key olarak "1D" ve Output type olarak "String Output" seçiyoruz. Örneğin bu sampleda xor keyimiz 1D olduğu için hex key seçeneğini seçtik veya inputumuz string olduğu için string input seçeneğini seçtik ancak farklı samplelarda inputumuz hex olabilir veya xor keyimiz decimal formatinda olabilir. XOR butonuna basıp çıktımızı inceliyoruz.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/15.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/18.png)
 
 <p align="justify">XOR işlemi sonucunda powershell syntax'ına uygun bir veri elde edebildik. Ancak hala shellcode'umuza ulaşamadık. Çıktımızı incelediğimizde base64 stringimizin GZip ile compress edildiğini görüyoruz. GZip normalde bir data streaminin boyutunun küçültmek için kullanılıyor ancak burada karşımıza sadece analiz işlemini bir adım zorlaştırmak amacıyla karşımıza çıkıyor. "GZipCompress.exe" toolumuzu açıp base64 kısmı input olarak giriyoruz ve decompress işlemi gerçekleştiriyoruz.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/16.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/19.png)
 
 <p align="justify">Bir adım daha ilerledikten sonra tekrar bir dizi powershell komutuyla karşılaşıyoruz. Çoğu scripti incelerken karşımıza çıkacak olan bir yapıya sahip. Zaten automated pentest toolları (Cobaltstrike, PowershellEmpire) bu gibi payloadları oluştururken çoğu zaman aynı formatta oluşturuyor ve gözümüz bir süre sonra aşina oluyor. Kısaca bahsedecek olursak memoryde shellcode çalıştırmaya yarıyor ama bizim için önemli olan kısım C2 bilgisini elde etmek olduğu için base64 kısmını kopyalıyorum ve text editore yapıştırıyorum. </p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/17.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/20.png)
 
 <p align="justify">Görüldüğü üzere shellcode kısmımız önce base64 decode edilip daha sonra "35" keyi ile xorlanıp execute ediliyor. Biz de aynı sırayla işlemlerimizi gerçekleştirip C2 bilgisine ulaşmaya çalışacağız. Artık decode edeceğimiz kısım shellcode olduğu için "hex stream" kutucuğunu işaretlemek zorundayız.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/18.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/21.png)
 
 <p align="justify">Çıktımızı alıp 35 keyi ile xorluyoruz. Bu sırada input ve output olarak hex seçeneğini işaretlemek zorundayız çünkü elimizdeki veri bir hex streamdir.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/19.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/22.png)
 
 <p align="justify">Sonunda shellcodeumuza ulaşabildik. Önceki örnekte olduğu gibi hex streamimi alıp bir hex editor aracılığıyla okuyorum.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/20.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/23.png)
 
 <p align="justify">Yine cleartext şeklinde domain bilgisine ulaştık. Ek olarak bağlantı kurulurken kullanılan User-Agent bilgisini elde ettik.</p>
 
@@ -135,4 +146,6 @@ Daha detaya inecek olursak kullanılan winapileri tespit edebiliriz. Bu winapile
 [vt1]: https://www.virustotal.com/gui/file/626879e64f571e21902bdc2f249ce247e03420e8656990d54f3ab4ceb99b4fb4/detection
 [alias_resource]: https://ilovepowershell.com/2011/11/03/list-of-top-powershell-alias/
 [metasp]: https://github.com/rapid7/metasploit-framework/blob/master/external/source/shellcode/windows/x86/src/block/block_reverse_http.asm
+[msdn]: https://docs.microsoft.com/en-us/windows/win32/wininet/http-sessions
+[msdn2]: https://docs.microsoft.com/en-us/windows/win32/api/wininet/nf-wininet-internetreadfile
 
