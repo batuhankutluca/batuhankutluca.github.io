@@ -139,10 +139,11 @@ Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/24.png)
 
-<p align="justify"></p>
+<p align="justify">Çıktıdan belirlenmiş parametrelerle bir adet daha powershell (v1.0) processi oluşturulup GZiplenmiş veriye decompress işlemi uygulanıp ortaya çıkan verinin çalıştırıldığını anlıyoruz. Base64 kısmı kopyalayıp GZipCompress programımıza input olarak giriyoruz.</p>
 
+![img]({{ site.baseurl }}/assets/img/powershell-3/25.png)
 
-
+<p align="justify">Decompress işleminden sonra yine tipik bir yapıya sahip meterpreter shellcodeuyla karşılaşıyoruz. </p>
 
 
 
