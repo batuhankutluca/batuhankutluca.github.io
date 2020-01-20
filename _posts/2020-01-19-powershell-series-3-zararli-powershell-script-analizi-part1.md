@@ -90,7 +90,7 @@ Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/14.png)
 
-[MSDN][msdn2] linkinden fonksiyonun bağlantı kurulan sunucudan yapılan request sonrası dönen cevabı okuduğu bilgisini ediniyoruz.   
+[MSDN][msdn2] linkinden fonksiyonun bağlantı kurulan sunucudan yapılan request sonrası dönen cevabı okuduğu bilgisini ediniyoruz.
 
 
 ## Sample 3
