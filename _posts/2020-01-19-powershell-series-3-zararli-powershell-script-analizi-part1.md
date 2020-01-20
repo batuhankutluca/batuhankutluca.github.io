@@ -84,39 +84,39 @@ Daha detaya inecek olursak kullanılan winapileri tespit edebiliriz. Bu winapile
 
 <p align="justify">Dosyayı açtığımızda bir char array ve en sonda xor işlemi için bir key görüyoruz. En başta ise "((vaRIABLe '*MDr*').naME[3,11,2]-JOIn'')" ifadesi yer alıyor. Bu ifadenin ne anlama geldiğini anlamak için powershell açıp komutu çalıştırıyoruz.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/11.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/12.png)
 
 <p align="justify">Karşımıza "iex" komutu yani InvokeExpression fonksiyonu çıkıyor. Bu fonksiyon kendinden sonra gelen bir dizi komutu çalıştırmaya yarıyor. Daha detaylı görmek için "variable *mdr*" komutunu çalıştırıyorum. "variable" komutunu bir üstteki gv aliası gibi düşünebiliriz yani bir değişkenin değerini almak için kullanılıyor. Sırasıyla arrayin 3,11 ve 2. elemanlarını aldığımızda i-e-x değerleriyle karşılaşıyoruz ve join komutuyla birleştirildiğinde InvokeExpression ifadesi karşımıza gelmiş oluyor. Bu kalıp çoğu obfuscate edilmiş scriptlerde karşımıza çıkmaktadır.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/12.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/13.png)
 
 <p align="justify">Burayı anladıktan sonra kalan işlem char arrayi önce string haline getirip daha sonra xorlamaktır. Dosyamızın en sonuna baktığımızda xor işlemi için belirtilen key "1D" olarak gözüküyor. "CharCodeConverter.exe" toolumuzu açıp charcode bölümünü input olarak giriyoruz. Textbox'a girilecek değer delimeter olması gerekiyor ki bu kod bloğunda char codelar "," ile ayrılmıştır. Boşlukları silmemize gerek yok, tool arka planda bütün boşlukları kendi siliyor.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/13.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/14.png)
 
 <p align="justify">Başarılı bir şekilde char arrayimizi text haline dönüştürebildik. Ancak karşımıza mantıklı bir şey çıkmadı çünkü xor işlemimizi daha gerçekleştirmedik. "XOR.exe" toolumuzu açıp bir önceki çıktımızı input olarak giriyoruz. Input type olarak "String Input", XOR Key Type olarak "Hex Key", XOR Key olarak "1D" ve Output type olarak "String Output" seçiyoruz. Örneğin bu sampleda xor keyimiz 1D olduğu için hex key seçeneğini seçtik veya inputumuz string olduğu için string input seçeneğini seçtik ancak farklı samplelarda inputumuz hex olabilir veya xor keyimiz decimal formatinda olabilir. XOR butonuna basıp çıktımızı inceliyoruz.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/14.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/15.png)
 
 <p align="justify">XOR işlemi sonucunda powershell syntax'ına uygun bir veri elde edebildik. Ancak hala shellcode'umuza ulaşamadık. Çıktımızı incelediğimizde base64 stringimizin GZip ile compress edildiğini görüyoruz. GZip normalde bir data streaminin boyutunun küçültmek için kullanılıyor ancak burada karşımıza sadece analiz işlemini bir adım zorlaştırmak amacıyla karşımıza çıkıyor. "GZipCompress.exe" toolumuzu açıp base64 kısmı input olarak giriyoruz ve decompress işlemi gerçekleştiriyoruz.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/15.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/16.png)
 
 <p align="justify">Bir adım daha gittikten sonra tekrar bir dizi powershell komutuyla karşılaşıyoruz. Çoğu scripti incelerken karşımıza çıkacak olan bir yapıya sahip. Zaten automated pentest toolları (Cobaltstrike, PowershellEmpire) bu gibi payloadları oluştururken çoğu zaman aynı formatta oluşturuyor ve gözümüz bir süre sonra aşina oluyor. Kısaca bahsedecek olursak memoryde shellcode çalıştırmaya yarıyor ama bizim için önemli olan kısım C2 bilgisini elde etmek olduğu için base64 kısmını kopyalıyorum ve text editore yapıştırıyorum. </p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/16.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/17.png)
 
 <p align="justify">Görüldüğü üzere shellcode kısmımız önce base64 decode edilip daha sonra "35" keyi ile xorlanıp execute ediliyor. Biz de aynı sırayla işlemlerimizi gerçekleştirip C2 bilgisine ulaşmaya çalışacağız. Artık decode edeceğimiz kısım shellcode olduğu için "hex stream" kutucuğunu işaretlemek zorundayız.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/17.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/18.png)
 
 <p align="justify">Çıktımızı alıp 35 keyi ile xorluyoruz. Bu sırada input ve output olarak hex seçeneğini işaretlemek zorundayız çünkü elimizdeki veri bir hex streamdir.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/18.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/19.png)
 
 <p align="justify">Sonunda shellcodeumuza ulaşabildik. Önceki örnekte olduğu gibi hex streamimi alıp bir hex editor aracılığıyla okuyorum.</p>
 
-![img]({{ site.baseurl }}/assets/img/powershell-3/19.png)
+![img]({{ site.baseurl }}/assets/img/powershell-3/20.png)
 
 <p align="justify">Yine cleartext şeklinde domain bilgisine ulaştık. Ek olarak bağlantı kurulurken kullanılan User-Agent bilgisini elde ettik.</p>
 
