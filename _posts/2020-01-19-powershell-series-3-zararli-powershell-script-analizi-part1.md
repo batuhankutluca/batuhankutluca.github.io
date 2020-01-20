@@ -76,7 +76,7 @@ Karşı sunucu ayakta olmadığı için herhangi bir data akışı sağlanmadı 
 
 <p align="justify">Buradan yine path bilgisini görebiliyoruz.</p>
 
-Daha detaya inecek olursak kullanılan winapileri tespit edebiliriz. Bu winapiler shellcode içine byte şeklinde gömüldüğünden apilerin hashlerini bilmek tespit açısından yeterli olacaktır. [Link üzerinden][metasp] inceleme yaptığımızda kullanılan wininet apisinin hash bilgisini görüyoruz. Hex gösterimi "0x0074656e" şeklinde olan byteların stacke push edildiği bilgisini edindikten sonra shellcodeumuza dönüp hex kısmında arama yapıyoruz. Burada dikkat edilecek kısım Big-Endian, Little-Endian farklılığından kaynaklanan byteların sırasının farklılığıdır. Yani biz bu hexleri sondan başa 2şer ayırarak aratmamız gerekiyor. 
+Daha detaya inecek olursak kullanılan winapileri tespit edebiliriz. Bu winapiler shellcode içine byte şeklinde gömüldüğünden apilerin hashlerini bilmek tespit açısından yeterli olacaktır. Örnet olarak wininet apisinin kullanıldığını bildiğim için [Link üzerinden][metasp] wininet apisinin hash bilgisini kontrol edebiliriz. Hex gösterimi "0x0074656e" şeklinde olan byteların stacke push edildiği bilgisini edindikten sonra shellcodeumuza dönüp hex kısmında arama yapıyoruz. Burada dikkat edilecek kısım Big-Endian, Little-Endian farklılığından kaynaklanan byteların sırasının farklılığıdır. Yani biz bu hexleri sondan başa 2şer ayırarak aratmamız gerekiyor. 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/11.png)
 
@@ -102,7 +102,7 @@ Daha detaya inecek olursak kullanılan winapileri tespit edebiliriz. Bu winapile
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/16.png)
 
-<p align="justify">Bir adım daha gittikten sonra tekrar bir dizi powershell komutuyla karşılaşıyoruz. Çoğu scripti incelerken karşımıza çıkacak olan bir yapıya sahip. Zaten automated pentest toolları (Cobaltstrike, PowershellEmpire) bu gibi payloadları oluştururken çoğu zaman aynı formatta oluşturuyor ve gözümüz bir süre sonra aşina oluyor. Kısaca bahsedecek olursak memoryde shellcode çalıştırmaya yarıyor ama bizim için önemli olan kısım C2 bilgisini elde etmek olduğu için base64 kısmını kopyalıyorum ve text editore yapıştırıyorum. </p>
+<p align="justify">Bir adım daha ilerledikten sonra tekrar bir dizi powershell komutuyla karşılaşıyoruz. Çoğu scripti incelerken karşımıza çıkacak olan bir yapıya sahip. Zaten automated pentest toolları (Cobaltstrike, PowershellEmpire) bu gibi payloadları oluştururken çoğu zaman aynı formatta oluşturuyor ve gözümüz bir süre sonra aşina oluyor. Kısaca bahsedecek olursak memoryde shellcode çalıştırmaya yarıyor ama bizim için önemli olan kısım C2 bilgisini elde etmek olduğu için base64 kısmını kopyalıyorum ve text editore yapıştırıyorum. </p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/17.png)
 
