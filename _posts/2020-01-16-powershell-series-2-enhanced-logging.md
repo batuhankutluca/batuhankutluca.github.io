@@ -105,6 +105,6 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 <p align="justify">Görüldüğü üzere çalışan script bloğunun ne çıktı verdiğini metadatayla birlikte başarıyla loglayabildik.</p>
 
-<p align="justify">Yazdığım her şey çeşitli kaynaklardan edindiğim bilgilerin ve araştırmalarımın sonuçlarının kendimce yorumlanmış halidir. Yanlış veya eksik bir bilgi söz konusuysa lütfen sayfanın en aşağısında bulunan sosyal medya linklerim üzerinden beni bilgilendirin. Bir sonraki yazıda görüşmek üzere. </p>
+<p align="justify">Yanlış veya eksik bir bilgi söz konusuysa lütfen sayfanın en aşağısında bulunan sosyal medya linklerim üzerinden beni bilgilendirin. Bir sonraki yazıda görüşmek üzere. </p>
 
 [ref]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-host?view=powershell-5.1

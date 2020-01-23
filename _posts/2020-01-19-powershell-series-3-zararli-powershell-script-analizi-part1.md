@@ -169,7 +169,7 @@ Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/33.png)
 
-<p align="justify">Yazdığım her şey çeşitli kaynaklardan edindiğim bilgilerin ve araştırmalarımın sonuçlarının kendimce yorumlanmış halidir. Yanlış veya eksik bir bilgi söz konusuysa lütfen sayfanın en aşağısında bulunan sosyal medya linklerim üzerinden beni bilgilendirin. Bir sonraki yazıda görüşmek üzere. </p>
+<p align="justify">Yanlış veya eksik bir bilgi söz konusuysa lütfen sayfanın en aşağısında bulunan sosyal medya linklerim üzerinden beni bilgilendirin. Bir sonraki yazıda görüşmek üzere. </p>
 
 
 [mytoolbag_dl]: https://github.com/batuhankutluca/Powershell-Decoding-Helper-Tools
