@@ -175,7 +175,7 @@ Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz
 [mytoolbag_dl]: https://github.com/batuhankutluca/Powershell-Decoding-Helper-Tools
 [hexeditor_dl]: https://mh-nexus.de/en/downloads.php?product=HxD20
 [ida_dl]: https://www.hex-rays.com/products/ida/support/download.shtml
-[scripts_dl]: https://www.google.com
+[scripts_dl]: https://github.com/batuhankutluca/Malicious-Powershell-Samples
 [scumbots_twitter]: https://twitter.com/ScumBots
 [rapid]: https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
 [anyrun1]: https://app.any.run/tasks/48b5012b-4987-4925-ac00-9677c100615a/
