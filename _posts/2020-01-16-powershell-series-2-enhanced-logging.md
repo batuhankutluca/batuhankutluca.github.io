@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell Serisi -2- [Enhanced Logging]"
+title: "Powershell Serisi -2- [Mavi Takım İçin Powershell Enhanced Logging]"
 feature-img: 'assets/img/powershell-1/bg.png'
 date: 2020-01-16 00:00:00
 author: batuhankutluca
