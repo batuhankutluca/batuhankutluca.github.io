@@ -13,7 +13,7 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 İlk scriptimizle (Sample 1) başlayalım.
 
-<p align="justify">Dosyayı açtığımızda bir powershell kod bloğuyla karşılaşıyoruz. Diğerlerinden farklı olarak burada çalıştırılan kod bloğu parametreler aracılığıyla çalıştırılmaktadır.</p>
+<p align="justify">Dosyayı açtığımızda bir powershell kod bloğuyla karşılaşıyoruz. Diğerlerinden farklı olarak burada çalıştırılan kod bloğu komut satırı yerine fonksiyon ve parametreler aracılığıyla çalıştırılmaktadır.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/1.png)
 
