@@ -23,3 +23,18 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/2.png)
 
+<p align="justify">Anlamlı verimizi string key seçeneğiyle ortaya çıkarmış olduk.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/3.png)
+
+<p align="justify">Çıktımızı biraz daha okunur hale getirdiğimizde bir WebClient objesi oluşturulup dosya indirildiğini, daha sonra indirilen dosyanın çalıştırıldığını görüyoruz. İstek atılan url bilgisi yine xorlanmış bir şekilde karşımıza çıkıyor. Analizimize bağlantı kurulan urli belirlemeye çalışarak devam ediyoruz. XOR işlemi olarak kullanılan fonksiyonun "p152b" olduğunu scriptin en altında görüyoruz. Key olarak yine önceki işlemdeki key kullanılmış.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/4.png)
+
+<p align="justify">Ek olarak indirilen dosyanın "Appdata" lokasyonuna "u2219e5" ismiyle .exe uzantılı bir şekilde kaydedildiğini görüyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/5.png)
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/6.png)
+
+
