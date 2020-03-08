@@ -37,4 +37,24 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/6.png)
 
+<p align="justify">Sunucu kapalı olduğu için analizimizi burada sonlandırmak zorundayız.</p>
 
+## Sample 2
+
+<p align="justify">Dosyayı açtığımızda base64 encodelanmış verimizi görüyoruz ve analizimize decode ederek başlıyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/7.png)
+
+<p align="justify">Decode edilmiş verimizi incelediğimizde önce base64 encodelanmış, daha sonra GZiplenmiş bir dizi veriyle karşılaşıyoruz. Hatırlayacak olursak bir önceki yazıdaki script bloğuyla hemen hemen aynı yapıya sahiptir. Aynı yöntemi uygulayarak decompress işlemimizi gerçekleştiriyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/8.png)
+
+<p align="justify">Decompress işlemimizi gerçekleştirip çıktımızı incelemeye başlıyoruz. Klasik bir meterpreter kodu yapısıyla karşı karşıyayız. Kodun aşağısında base64 encodelanmış shellcodeumuzu görüyoruz ve hex streame dönüştürmek için "Base64EncodeDecode" toolumuzu kullanıyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/9.png)
+
+<p align="justify">Shellcode'a ulaştığımızı FC E8 magic bytelardan anlayabiliriz. Hex streamimizi herhangi bir hex editör yardımıyla açıyoruz. Windows Defender kapalı bir sistemde çalışmanızı öneririm çünkü çoğu zaman Defender dosyayı kaydetmenize engel olacaktır.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/10.png)
+
+<p align="justify">Cleartext bir IP/Domain/Port bilgisi elde edemedik. Dolayısıyla analizimize binarymizi disassemble ederek devam etmek zorundayız.</p>
