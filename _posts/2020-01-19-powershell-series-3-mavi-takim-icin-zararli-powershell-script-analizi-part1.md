@@ -18,7 +18,7 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 Örnek scriptlerin çoğunu [Scumbots][scumbots_twitter] twitter hesabının paylaşımlarından aldım. Bu twitter hesabı pastebin.com'da paylaşılan binary/powershell kodlarını otomatik olarak analiz edip IOC tanımlaması yapıyor. Çeşitlilik açısından güzel bir repo olduğunu düşünüyorum.
 
-<p align="justify">Toplamda 8 adet scriptin analizini anlatacağım ancak ilk dördünü bu yazıda paylaşacağım. Kalan dördünü aynı yazının Part2 olarak gelen devam yazısında anlatmaya çalışacağım. Yazdığım toollar scripti çalıştırmadan decoding işlemi yaptığı için tolların kullanımı sırasında herhangi bir risk oluşmayacaktır ancak scriptler Defender tarafından karantinaya alındığı için Test VM'inizde Defender'ı kapatmanızı öneririm (veya her bir dosya için cihazda izin ver seçeneğini kullanabilirsiniz).</p>
+<p align="justify">Toplamda 7 adet scriptin analizini anlatacağım ancak ilk dördünü bu yazıda paylaşacağım. Kalan üçünü aynı yazının Part2 olarak gelen devam yazısında anlatmaya çalışacağım. Yazdığım toollar scripti çalıştırmadan decoding işlemi yaptığı için tolların kullanımı sırasında herhangi bir risk oluşmayacaktır ancak scriptler Defender tarafından karantinaya alındığı için Test VM'inizde Defender'ı kapatmanızı öneririm (veya her bir dosya için cihazda izin ver seçeneğini kullanabilirsiniz).</p>
 
 ## Sample 1
 
