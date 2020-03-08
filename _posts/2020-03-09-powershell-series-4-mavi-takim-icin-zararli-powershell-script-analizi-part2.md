@@ -57,4 +57,6 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/10.png)
 
-<p align="justify">Cleartext bir IP/Domain/Port bilgisi elde edemedik. Dolayısıyla analizimize binarymizi disassemble ederek devam etmek zorundayız.</p>
+<p align="justify">Cleartext bir IP/Domain/Port bilgisi elde edemedik. Dolayısıyla analizimize binarymizi disassemble ederek devam etmek zorundayız. Binarymizi disassembler aracılığıyla açıyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/11.png)
