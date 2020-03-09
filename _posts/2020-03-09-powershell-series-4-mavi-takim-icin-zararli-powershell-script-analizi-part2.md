@@ -15,7 +15,7 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 ## Sample 5
 
-İlk scriptimizle (Sample 1) başlayalım.
+İlk scriptimizle (Sample 5) başlayalım.
 
 <p align="justify">Dosyayı açtığımızda bir powershell kod bloğuyla karşılaşıyoruz. Diğerlerinden farklı olarak burada çalıştırılan kod bloğu komut satırı yerine fonksiyon ve parametreler aracılığıyla çalıştırılmaktadır.</p>
 
