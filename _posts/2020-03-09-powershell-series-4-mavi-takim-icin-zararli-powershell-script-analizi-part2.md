@@ -41,8 +41,6 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/6.png)
 
-<p align="justify">Sunucu kapalı olduğu için analizimizi burada sonlandırmak zorundayız.</p>
-
 ## Sample 6
 
 <p align="justify">Dosyayı açtığımızda base64 encodelanmış verimizi görüyoruz ve analizimize decode ederek başlıyoruz.</p>
