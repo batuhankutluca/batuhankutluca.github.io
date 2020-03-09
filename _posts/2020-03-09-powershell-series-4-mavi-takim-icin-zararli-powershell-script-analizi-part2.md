@@ -87,5 +87,29 @@ Bir önceki yazıda disassemble edilen veride art arda 2 adet push komutu aramı
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/17.png)
 
-<p align="justify">Replace işleminden sonra bir alt satıra geçiyoruz.</p>
+<p align="justify">Replace işleminden sonra bir alt satıra geçiyoruz. "$(@{})" değişkeninin neye karşılık geldiğini anlamak için yine aynı işlemi gerçekleştiriyoruz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/18.png)
+
+<p align="justify">"$(@{})" değişkenimizin "System.Collections.Hashtable" stringine denk geldiğini gördük. [7], [19] gibi değerler bu stringimizin ilgili indexindeki harfe denk geliyor yani bir array gibi davranıp ilgili indexteki karaktere eşleniyor. Bunu anladıktan sonra "${~%}" değişkenimizin neye karşılık geldiğini çözebiliriz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/19.png)
+
+<p align="justify">Sırasıyla C,h ve a karakterlerine eşlendiğini gördük. Ancak aynı satırın sonunda bulunan "$?"[1] dğeişkeninin değerini bilmiyoruz. Aynı yöntemle bulmaya çalışalım.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/20.png)
+
+<p align="justify">Dönen cevap "True" oldu ve 1. indexteki karaktere eşlediğimizde "r" harfine denk geldiğini anlıyoruz. Yani "${~%}" değişkenimiz [Char] değerine karşılık geliyor. Yine "${~%}" gördüğümüz yeri [Char] ile değiştirerek devam ediyoruz.</p>
+
+
+
+
+
+
+
+
+
+
+
+
 [msdn]: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket
