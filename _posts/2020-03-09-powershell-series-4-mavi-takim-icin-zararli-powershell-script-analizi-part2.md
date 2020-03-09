@@ -101,7 +101,15 @@ Bir önceki yazıda disassemble edilen veride art arda 2 adet push komutu aramı
 
 <p align="justify">Dönen cevap "True" oldu ve 1. indexteki karaktere eşlediğimizde "r" harfine denk geldiğini anlıyoruz. Yani "${~%}" değişkenimiz [Char] değerine karşılık geliyor. Yine "${~%}" gördüğümüz yeri [Char] ile değiştirerek devam ediyoruz.</p>
 
+![img]({{ site.baseurl }}/assets/img/powershell-4/21.png)
 
+<p align="justify">Yapmamız gereken son şey ilgili char'ların neye karşılık geldiğini bulmak olacaktır. Bunun için "CharcodeConverter" toolumuzu kullanabiliriz.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/22.png)
+
+<p align="justify">İlk başta gördüğümüz ve anlamlandıramadığımız karmaşık kodun aslında ne çalıştırdığını görmüş olduk. :)</p>
+
+<p align="justify">Yanlış veya eksik bir bilgi söz konusuysa lütfen sayfanın en aşağısında bulunan sosyal medya linklerim üzerinden beni bilgilendirin. Bir sonraki yazıda görüşmek üzere. </p>
 
 
 
