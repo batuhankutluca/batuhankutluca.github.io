@@ -83,4 +83,9 @@ Bir önceki yazıda disassemble edilen veride art arda 2 adet push komutu aramı
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/16.png)
 
+<p align="justify">Buradan çıkarabileceğimiz sonuç her değişkene 0'dan 9'a kadar bir değer atıyor. O halde script içinde ilgili değişkenleri, değerleriyle replace edebiliriz. </p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/17.png)
+
+<p align="justify">Replace işleminden sonra bir alt satıra geçiyoruz.</p>
 [msdn]: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket
