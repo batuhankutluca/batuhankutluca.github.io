@@ -131,7 +131,7 @@ Resimde görüldüğü üzere wininet apisinin kullanıldığını öğreniyoruz
 
 ![img]({{ site.baseurl }}/assets/img/powershell-3/23.png)
 
-<p align="justify">Yine cleartext şeklinde domain bilgisine ulaştık. Ek olarak bağlantı kurulurken kullanılan User-Agent bilgisini elde ettik.</p>
+<p align="justify">Yine cleartext şeklinde domain bilgisine ulaştık. Ek olarak bağlantı kurulurken kullanılan User-Agent bilgisini elde ettik. Shellcode içinde user-agent bilgisinin geçmesi, karşı sunucunun gelen requeste belli koşullar sağlandığı takdirde response verebileceğine işaret olabilir. Belli koşulladan kasıt buradaki user-agent bilgisi oluyor. Yani belli bir urle get isteği atıldığında cevap dönülmezken spesifik bir user-agent bilgisiyle get isteği atıldığında zararlı dosya indirilebilir. Bu yöntemle saldırganlar C2 sunucularının tespiti ve analizini zorlaştırabilir.</p>
 
 ## Sample 4
 
