@@ -60,3 +60,7 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 <p align="justify">Cleartext bir IP/Domain/Port bilgisi elde edemedik. Dolayısıyla analizimize binarymizi disassemble ederek devam etmek zorundayız. Binarymizi disassembler aracılığıyla açıyoruz.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/11.png)
+
+Bir önceki yazıda disassemble edilen veride art arda 2 adet push komutu aramıştık. Yine aynı şekilde aradığımızda bu sefer karşımıza iki adet sonuç çıktı. Hangisi olduğunu anlamak için hex veri içinde 0200 aramak yeterli olacaktır. Buradaki 0200 hex verisi, [winsocket apisinin][msdn] AF_INET parametresine denk gelmektedir. 02 verisi bize kullanılacak IP protokolünün IPv4 olduğunu söylemektedir. Dolayısıyla decimale çevireceğimiz kısım altta gözüken push fonksiyonları olmalıdır
+
+[msdn]: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket
