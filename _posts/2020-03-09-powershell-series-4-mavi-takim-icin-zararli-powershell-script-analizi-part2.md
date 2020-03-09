@@ -67,6 +67,6 @@ Bir önceki yazıda disassemble edilen veride art arda 2 adet push komutu aramı
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/13.png)
 
-<p align="justify">Verimizi doğru şekilde decimale çevirdikten sonra C2 bilgimizi </p>
+<p align="justify">Verimizi doğru şekilde decimale çevirdikten sonra C2 bilgimizi 76.218.94.80 ve connection kurulan portu 4444 olarak elde ettik.</p>
 
 [msdn]: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket
