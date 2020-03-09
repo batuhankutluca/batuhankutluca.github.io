@@ -69,4 +69,18 @@ Bir önceki yazıda disassemble edilen veride art arda 2 adet push komutu aramı
 
 <p align="justify">Verimizi doğru şekilde decimale çevirdikten sonra C2 bilgimizi 76.218.94.80 ve connection kurulan portu 4444 olarak elde ettik.</p>
 
+## Sample 7
+
+<p align="justify">Son script olarak Invoke-Obfuscation modülünün içinde gelen "Special Characters" methoduyla obfuscate edilmiş bir scripti nasıl deobfuscate edebileceğimizi anlatmaya çalışacağım. Örnek olması açısından bir script oluşturdum.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/14.png)
+
+<p align="justify">Scripte ilk baktığımızda okunabilir hiçbir şey göremeyeceğiz. Bu yüzden yapacağımız ilk şey delimiter olarak kullanılan ";" 'e göre kod bloğumuzu biraz daha okunabilir hale getirmek olacaktır.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/15.png)
+
+<p align="justify">Sonra ilk kısmın ne işe yaradığını anlamaya çalışalım. Kodu Powershell ISE içine atıp çalıştırıyorum ve her değişkenin değerini işlem sonrasında ekrana bastırıyorum.</p>
+
+![img]({{ site.baseurl }}/assets/img/powershell-4/16.png)
+
 [msdn]: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket
