@@ -9,7 +9,7 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 <p align="justify">Herkese selam. Bu yazıda önceki yazının devamı olarak kalan 3 scriptin analizi hakkında bilgi paylaşmaya çalışacağım.</p> 
 
-## Sample 1
+## Sample 5
 
 İlk scriptimizle (Sample 1) başlayalım.
 
@@ -39,7 +39,7 @@ tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced 
 
 <p align="justify">Sunucu kapalı olduğu için analizimizi burada sonlandırmak zorundayız.</p>
 
-## Sample 2
+## Sample 6
 
 <p align="justify">Dosyayı açtığımızda base64 encodelanmış verimizi görüyoruz ve analizimize decode ederek başlıyoruz.</p>
 
