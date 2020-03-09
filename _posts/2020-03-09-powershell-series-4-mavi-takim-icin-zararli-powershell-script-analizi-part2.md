@@ -7,7 +7,11 @@ author: batuhankutluca
 tags: [Powershell, Obfuscate, Obfuscation, Deobfuscate, Deobfuscation, Enhanced Logging, Logging, Module Logging, Script Block Logging, Transcription]
 ---
 
-<p align="justify">Herkese selam. Bu yazıda önceki yazının devamı olarak kalan 3 scriptin analizi hakkında bilgi paylaşmaya çalışacağım.</p> 
+<p align="justify">Herkese selam. Bu yazıda önceki yazının devamı olarak kalan 3 scriptin analizi hakkında bilgi paylaşmaya çalışacağım.</p>
+
+<p align="justify">Aşağıdaki linkten scriptlere ulaşabilirsiniz.</p>
+
+* [Script Repo][scripts_dl] 
 
 ## Sample 5
 
@@ -103,7 +107,7 @@ Bir önceki yazıda disassemble edilen veride art arda 2 adet push komutu aramı
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/21.png)
 
-<p align="justify">Yapmamız gereken son şey ilgili char'ların neye karşılık geldiğini bulmak olacaktır. Bunun için "CharcodeConverter" toolumuzu kullanabiliriz.</p>
+<p align="justify">Yapmamız gereken son şey ilgili char'ların neye karşılık geldiğini bulmak olacaktır. Bunun için "CharCodeConverter" toolumuzu kullanabiliriz.</p>
 
 ![img]({{ site.baseurl }}/assets/img/powershell-4/22.png)
 
@@ -121,3 +125,4 @@ Bir önceki yazıda disassemble edilen veride art arda 2 adet push komutu aramı
 
 
 [msdn]: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket
+[scripts_dl]: https://github.com/batuhankutluca/Malicious-Powershell-Samples
