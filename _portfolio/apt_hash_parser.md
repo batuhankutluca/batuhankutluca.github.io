@@ -2,6 +2,7 @@
 layout: post
 title: APT Hash Parser
 img: "assets/img/portfolio/APT.png"
+feature-img: "assets/img/portfolio/APT.png"
 date: March, 08 2020
 tags: [APT,Parse,Parser,Hash,IOC]
 ---
