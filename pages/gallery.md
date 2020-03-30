@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Test
+title: Gallery
 subtitle: From the pexels folder
 permalink: /gallery/
 gallery_path: "assets/img/pexels"
