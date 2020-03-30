@@ -10,6 +10,8 @@ tags: [Malicious,Powershell,Decode,Decoding,Helper,Tool,Malware,Reverse]
 These are my tools that created to make analysis of malicious powershell scripts. To learn how to use them and how to analyze malicious powershell scripts, check my posts. 
 
 [Blog post part 1][p1]
+
+
 [Blog post part 2][p2]
 
 You can access to my tools via [here.][repo]
