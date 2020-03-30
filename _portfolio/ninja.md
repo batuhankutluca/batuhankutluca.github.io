@@ -3,7 +3,7 @@ layout: post
 title: APT Hash Parser
 img: "assets/img/portfolio/APT.png"
 date: March, 08 2020
-tags: [Lorem]
+tags: [APT,Parse,Parser,Hash,IOC]
 ---
 
 ![image]({{ page.img | relative_url }})
