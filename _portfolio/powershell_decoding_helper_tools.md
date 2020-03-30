@@ -2,7 +2,7 @@
 layout: post
 title: Powershell Decoding Helper Tools
 feature-img: "assets/img/powershell-1/bg.png"
-img: "assets/img/portfolio/cake.png"
+img: "assets/img/portfolio/powershell.png"
 date: January, 19 2020
 tags: [Malicious,Powershell,Decode,Decoding,Helper,Tool,Malware,Reverse]
 ---
