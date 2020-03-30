@@ -1,8 +1,8 @@
 ---
 layout: post
-title: APT Hash Parser
+title: Python SMTP Debugger
 img: "assets/img/portfolio/python_smtp.png"
-feature-img: "assets/img/portfolio/python_smtp.png"
+feature-img: "assets/img/powershell-1/bg.png"
 date: February, 02 2020
 tags: [Python,SMTP,Debug,Debugger]
 ---
